@@ -1,0 +1,180 @@
+// Main Template
+// -------------------------------
+* {
+  outline: none;
+}
+
+html,
+body {}
+
+html {
+  font-size: $main-browserContext--calc;
+}
+
+body {
+  @include fontStyle();
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 100vh;
+  padding: $main-space;
+  font-weight: bold;
+}
+
+.mainHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  margin-bottom: $main-space;
+}
+
+.mainHeader-left {
+  display: flex;
+  flex: 1;
+  font-size: 2rem;
+}
+
+.mainHeader-right {
+  display: flex;
+  font-size: $main-browserContext--calc;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: center;
+  span {
+    padding: $card-padding;
+  }
+}
+
+.mainHeader-logo {
+  align-items: center;
+  justify-content: center;
+  margin-right: auto;
+  img {
+    display: inline-flex;
+    height: rem($main-header-logo-height);
+  }
+}
+
+.mainHeader-content {}
+
+.mainHeader-logout {
+  .btnLogout {
+    align-items: center;
+    background: none;
+    border: 0px;
+    color: rgba(#000, .5);
+    display: flex;
+    flex-direction: column;
+    height: rem($main-header-height);
+    justify-content: center;
+    width: rem($main-header-height);
+    &::before {
+      font-size: 1.7rem;
+    }
+  }
+}
+
+.mainContent {
+  display: flex;
+  flex: 1;
+  max-width: 100%;
+  overflow: auto;
+  position: relative;
+  width: 100%;
+  .subContent {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: $main-space 0;
+    &:first-child {
+      padding-right: $main-space;
+    }
+    &:last-child {
+      padding-left: $main-space;
+      border-left: 2px solid $main-theme-color;
+    }
+  }
+}
+
+.subContent-title {
+  display: flex;
+  flex-direction: row;
+  font-size: $main-browserContext--calc;
+  padding: $title-padding 0;
+  span {
+    &.chanel {
+      width: 100px;
+      margin-right: $main-space
+    }
+    &.queue-number {}
+  }
+}
+
+.subContent-Content{
+  overflow: auto;
+  position: relative;
+  &::-webkit-scrollbar{
+    display: none;
+  }
+}
+
+.callQueue-box {
+  display: flex;
+  min-height: 110px;
+  margin: 10px 0;
+  flex-direction: row;
+  &.--active{
+    .chanel-box,.queuenumber-box{
+      background-color: $main-theme-color;
+      color: $lighten-font-color;
+    }
+  }
+  .chanel-box {
+    display: flex;
+    width: 100px; // background-color: $main-theme-color;
+    margin-right: $main-space;
+    border-radius: $main-radius;
+    border: 2px solid $main-theme-color;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    padding: $card-padding;
+  }
+  .queuenumber-box {
+    display: flex;
+    flex: 1; // background-color: $main-theme-color;
+    border-radius: $main-radius;
+    border: 2px solid $main-theme-color;
+    padding: $card-padding;
+    flex-direction: column;
+    justify-content: space-around;
+    .content-box{
+      display: flex;
+      flex-direction: row;
+      .text{
+        display: flex;
+        flex: 1;
+      }
+      .icon{
+        display: flex;
+        width: 20px;
+        margin-left: 5px;
+        // background-color: $main-theme-color;
+      }
+    }
+  }
+}
+
+.mainFooter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  margin-top: $main-space;
+  min-height: 38.4px;
+}
